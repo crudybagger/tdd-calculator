@@ -8,4 +8,7 @@ describe('test add', function () {
   it('one number', function () {
     equal(add("1"), 1);
   });
+  it('two numbers', function () {
+    equal(add("1,2"), 3);
+  });
 });
