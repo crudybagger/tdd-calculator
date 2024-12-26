@@ -1,5 +1,5 @@
 export const add = (numbers) => {
-    const numbersArray = numbers.split(",");
+    const numbersArray = numbers.split(/[\n,]/);
 
     if(isNaN(parseInt(numbersArray[1]))) {
         return numbers;
