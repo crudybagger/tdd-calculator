@@ -9,7 +9,13 @@ export const add = (numbers) => {
 }
 
 export const subtract = (numbers) => {
-    return 0;
+    let numbersArray = parseNumberString(numbers);
+
+    numbersArray = filterNumbers(numbersArray);
+
+    if(numbersArray.length === 1 && isNaN(parseInt(numbersArray[0]))) return 0;
+
+    return numbersArray.reduce((sum, number) => (sum - parseInt(number)), parseInt(numbersArray[0]) * 2);
 }
 
 const parseNumberString = (numbers) => {
