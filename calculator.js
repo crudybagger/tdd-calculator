@@ -7,8 +7,8 @@ export const add = (numbers) => {
             delimiter = delimiter.slice(1, -1);
             if(delimiter.includes('][')) {
                 const delimiters = delimiter.split('][');
-                delimiter = "[" + delimiters.join('|') + "]";
-                delimiter = new RegExp(delimiter, 'g');
+                const escapedDelimiters = delimiters.map(d => d.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'));
+                delimiter = new RegExp(escapedDelimiters.join("|"));
             }
         }
         numbersArray = numbersString.split(delimiter);
