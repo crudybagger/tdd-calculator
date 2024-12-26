@@ -41,4 +41,7 @@ describe('test add', function () {
   it('multiple delimiters', function () {
     equal(add("//[*][%]\n1*2%3"), 6);
   });
+  it('multiple delimiters with length longer than one', function () {
+    equal(add("//[**][%%]\n1**2%%3"), 6);
+  });
 });
