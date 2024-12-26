@@ -29,4 +29,10 @@ describe('test add', function () {
   it('negative numbers multiple', function () {
     throws(() => add("1,-2,-3"), Error("negative numbers not allowed -2,-3"));
   });
+  it('numbers bigger than 1000', function () {
+    equal(add("2, 1001"), 2);
+  });
+  it('multiple numbers bigger than 1000', function () {
+    equal(add("2, 1001, 2000"), 2);
+  });
 });
