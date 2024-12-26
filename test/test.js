@@ -11,4 +11,7 @@ describe('test add', function () {
   it('two numbers', function () {
     equal(add("1,2"), 3);
   });
+  it('multiple numbers', function () {
+    equal(add("1, 2, 3, 4, 5"), 15);
+  });
 });
