@@ -1,4 +1,4 @@
-import { equal } from 'assert';
+import { equal, throws } from 'assert';
 import { add } from '../calculator.js';
 
 describe('test add', function () {
@@ -23,5 +23,10 @@ describe('test add', function () {
   it('different delimiters multiple numbers', function () {
     equal(add("//*\n1*2*12"), 15);
   });
-
+  it('negative numbers', function () {
+    throws(() => add("1,-2,3"), Error("negative numbers not allowed -2"));
+  });
+  it('negative numbers multiple', function () {
+    throws(() => add("1,-2,-3"), Error("negative numbers not allowed -2,-3"));
+  });
 });
