@@ -35,4 +35,7 @@ describe('test add', function () {
   it('multiple numbers bigger than 1000', function () {
     equal(add("2, 1001, 2000"), 2);
   });
+  it('delimiters of any length', function () {
+    equal(add("//[***]\n1***2***3"), 6);
+  });
 });
