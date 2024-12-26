@@ -1,9 +1,9 @@
 export const add = (numbers) => {
-    const [num1, num2] = numbers.split(",");
+    const numbersArray = numbers.split(",");
 
-    if(isNaN(parseInt(num2))) {
+    if(isNaN(parseInt(numbersArray[1]))) {
         return numbers;
     }
 
-    return parseInt(num1) + parseInt(num2);
+    return numbersArray.reduce((sum, number) => (sum + parseInt(number)), 0);
 }
