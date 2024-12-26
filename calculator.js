@@ -2,7 +2,10 @@ export const add = (numbers) => {
     let numbersArray = [];
     if(numbers.startsWith('//')) {
         const [delimiterString, numbersString] = numbers.split('\n');
-        const delimiter = delimiterString.slice(2);
+        let delimiter = delimiterString.slice(2);
+        if(delimiter.startsWith("[")) {
+            delimiter = delimiter.slice(1, -1);
+        }
         numbersArray = numbersString.split(delimiter);
     }
     else numbersArray = numbers.split(/[\n,]/);
