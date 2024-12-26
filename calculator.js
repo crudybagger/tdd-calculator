@@ -12,5 +12,7 @@ export const add = (numbers) => {
     const negatives = numbersArray.filter((number) => parseInt(number) < 0).map(num => parseInt(num));
     if(negatives.length > 0) throw new Error(`negative numbers not allowed ${negatives.join(',')}`);
 
+    numbersArray = numbersArray.map((number) => (parseInt(number) > 1000) ? 0 : number);
+
     return numbersArray.reduce((sum, number) => (sum + parseInt(number)), 0);
 }
