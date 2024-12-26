@@ -1,6 +1,8 @@
 import { equal } from 'assert';
-describe('do nothing', function () {
-  it('nothing test', function () {
-    equal(true, true);
+import { add } from '../calculator.js';
+
+describe('test add', function () {
+  it('empty input', function () {
+    equal(add(""), 0);
   });
 });
