@@ -5,6 +5,11 @@ export const add = (numbers) => {
         let delimiter = delimiterString.slice(2);
         if(delimiter.startsWith("[")) {
             delimiter = delimiter.slice(1, -1);
+            if(delimiter.includes('][')) {
+                const delimiters = delimiter.split('][');
+                delimiter = "[" + delimiters.join('|') + "]";
+                delimiter = new RegExp(delimiter, 'g');
+            }
         }
         numbersArray = numbersString.split(delimiter);
     }
