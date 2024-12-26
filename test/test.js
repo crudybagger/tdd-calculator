@@ -38,4 +38,7 @@ describe('test add', function () {
   it('delimiters of any length', function () {
     equal(add("//[***]\n1***2***3"), 6);
   });
+  it('multiple delimiters', function () {
+    equal(add("//[*][%]\n1*2%3"), 6);
+  });
 });
